@@ -17,8 +17,6 @@
             </a>
         </li>
 
-
-
         <!-- List pages -->
         <?
             for ($i = 1; $i <= (count($items)+1) / $items_per_page; $i++) {

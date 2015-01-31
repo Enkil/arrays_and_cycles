@@ -20,7 +20,7 @@
 
     <?
 
-        foreach (array_slice($items, $page_num , $items_per_page) as $key => $item){
+        foreach (array_slice($items, ($page_num - 1) * $items_per_page , $items_per_page) as $key => $item){
 
             echo '<div class="row">';
 
