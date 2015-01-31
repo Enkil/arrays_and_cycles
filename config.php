@@ -7,7 +7,7 @@ require_once('items.php');
 
 
 $siteName = 'Магазинчег';
-$items_per_page = 2; // How many items should be on one page
+$items_per_page = 6; // How many items should be on one page
 
 
 

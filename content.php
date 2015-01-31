@@ -10,10 +10,12 @@
 <!--            <p>ffffff</p>-->
 <!--            <h3>ff</h3>-->
 <!--            <h3>111</h3>-->
+<!--            <button type="button" class="btn btn-primary">Primary</button>-->
 <!--        </div>-->
 <!---->
 <!--    </div>-->
 <!--</div>-->
+
 
 
 <div class="container">
@@ -33,6 +35,7 @@
                     echo '<p>' . 'Описание: ' . '<br/>' . $items[$key]['description'] . '</p>';
                     echo '<h4>' . 'Категория: ' . $items[$key]['category'] . '</h4>';
                     echo '<h4>' . 'Стоимость: ' . $items[$key]['price'] . ' руб.' . '</h4>';
+                    echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Заказать</button>';
                 echo '</div>';
 
             echo '</div>';
@@ -42,3 +45,13 @@
 ?>
 </div>
 
+<!--TODO не отобрадается модальное окно. Хочу сделать форму заказа-->
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            ...
+        </div>
+    </div>
+</div>

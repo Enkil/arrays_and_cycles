@@ -19,7 +19,7 @@
 
         <!-- List pages -->
         <?
-            for ($i = 1; $i <= (count($items)+1) / $items_per_page; $i++) {
+            for ($i = 1; $i <= ceil((count($items)+1) / $items_per_page); $i++) {
                 if ($i == $page_num) {
                     echo '<li class="active">' . "<a href='index.php?page_num=$i'>" . $i . '</a></li>';
                 } else {
