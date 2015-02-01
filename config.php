@@ -5,9 +5,14 @@
 
 require_once('items.php');
 
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+ini_set("display_startup_errors", 1);
+
 
 $siteName = 'Магазинчег';
-$items_per_page = 6; // How many items should be on one page
+$adminEmail = 'tia@net-simple.ru';
+$items_per_page = 2; // How many items should be on one page
 
 
 

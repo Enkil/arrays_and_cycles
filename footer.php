@@ -47,5 +47,12 @@
 </nav>
 <!-- / Pagination -->
 
+<!-- JavaScript -->
+<!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+<!--<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+<!--<script src="bower_components/bootstrapValidator/dist/js/bootstrapValidator.min.js"></script>-->
+<!--<script src="js/form-validate.js"></script>-->
+<!-- / JavaScript -->
+
 </body>
 </html>

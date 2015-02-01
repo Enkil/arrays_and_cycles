@@ -21,8 +21,9 @@
 <div class="container">
 
     <?
+        $itemsOnPage = array_slice($items, ($page_num - 1) * $items_per_page , $items_per_page);
 
-        foreach (array_slice($items, ($page_num - 1) * $items_per_page , $items_per_page) as $key => $item){
+        foreach ($itemsOnPage as $key => $item){
 
             echo '<div class="row">';
 
@@ -35,7 +36,7 @@
                     echo '<p>' . 'Описание: ' . '<br/>' . $items[$key]['description'] . '</p>';
                     echo '<h4>' . 'Категория: ' . $items[$key]['category'] . '</h4>';
                     echo '<h4>' . 'Стоимость: ' . $items[$key]['price'] . ' руб.' . '</h4>';
-                    echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Заказать</button>';
+                    echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal" id="orderBtn">Заказать</button>';
                 echo '</div>';
 
             echo '</div>';
@@ -45,13 +46,42 @@
 ?>
 </div>
 
-<!--TODO не отобрадается модальное окно. Хочу сделать форму заказа-->
 
 <!-- Modal -->
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
-            ...
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Оформить заказ</h4>
+            </div>
+
+            <div class="modal-body">
+                <form action="orderFormAction.php" method="post" id="orderForm">
+
+                    <div class="form-group">
+                        <label for="name">Как к Вам обращаться?</label>
+                        <input type="text" class="form-control" name="name" placeholder="Меня зовут:" required="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Ваш email?</label>
+                        <input type="email" class="form-control" name="email" placeholder="Пишите мне на:" required="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Адрес доставки?</label>
+                        <textarea class="form-control" rows="3" name="address" placeholder="Пришлите заказ по адресу:" required=""></textarea>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" form="orderForm">Заказать</button>
+            </div>
+
         </div>
     </div>
 </div>
