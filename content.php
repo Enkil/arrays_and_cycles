@@ -23,19 +23,19 @@
     <?
         $itemsOnPage = array_slice($items, ($page_num - 1) * $items_per_page , $items_per_page);
 
-        foreach ($itemsOnPage as $key => $item){
+        foreach ($itemsOnPage as $item){
 
             echo '<div class="row">';
 
                 echo '<div class="col-sm-3">';
-                   echo '<img class="img-responsive img-rounded" src=img/'  . $items[$key]['image'] . ' alt="alt text"/>';
+                   echo '<img class="img-responsive img-rounded" src=img/'  . $item['image'] . ' alt="alt text"/>';
                 echo '</div>';
 
                 echo '<div class="col-sm-9">';
-                    echo '<h2>' . $items[$key]['title'] . '</h2>';
-                    echo '<p>' . 'Описание: ' . '<br/>' . $items[$key]['description'] . '</p>';
-                    echo '<h4>' . 'Категория: ' . $items[$key]['category'] . '</h4>';
-                    echo '<h4>' . 'Стоимость: ' . $items[$key]['price'] . ' руб.' . '</h4>';
+                    echo '<h2>' . $item['title'] . '</h2>';
+                    echo '<p>' . 'Описание: ' . '<br/>' . $item['description'] . '</p>';
+                    echo '<h4>' . 'Категория: ' . $item['category'] . '</h4>';
+                    echo '<h4>' . 'Стоимость: ' . $item['price'] . ' руб.' . '</h4>';
                     echo '<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal" id="orderBtn">Заказать</button>';
                 echo '</div>';
 
@@ -43,7 +43,8 @@
 
         }
 
-?>
+    ?>
+
 </div>
 
 
